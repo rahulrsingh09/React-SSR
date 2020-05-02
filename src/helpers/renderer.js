@@ -2,17 +2,23 @@ import React from 'react';
 import { renderToString }from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
 import Routes from "../client/Routes";
+import { ServerStyleSheet } from 'styled-components';
 
 export default (req) => {
+    const sheet = new ServerStyleSheet();
     const content = renderToString(
-        <StaticRouter location = {req.path} context = {{}} >
-            <Routes/>
-        </StaticRouter>
+        sheet.collectStyles(
+            <StaticRouter location = {req.path} context = {{}} >
+                <Routes/>
+            </StaticRouter>
+        )
     );
-
+    const styles = sheet.getStyleTags();
     return `
         <html>
-            <head></head>
+            <head>
+            ${styles}
+            </head>
             <body>
                 <div id = 'root'>${content}</div>
                 <script src = 'bundle.js'></script>
