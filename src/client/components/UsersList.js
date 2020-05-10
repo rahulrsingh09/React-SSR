@@ -41,9 +41,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 const loadData = (store) => {
-    return new Promise((resolve) => {
-        store.dispatch({type: FETCH_USERS, callback: resolve })
-    });
+    store.dispatch({type: FETCH_USERS})
 }
 
 export default {
