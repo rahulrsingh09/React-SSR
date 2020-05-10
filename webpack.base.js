@@ -1,11 +1,14 @@
+const path = require('path');
 module.exports = {
     module: {
         rules: [
             {
                 test: /\.js?$/,
-                loader: 'babel-loader',
-                exclude: '/node_modules/',
                 options: {
+                    plugins:[
+                        'transform-runtime',
+                        'transform-class-properties'
+                    ],
                     presets :[
                         'react',
                         'stage-0',
@@ -14,7 +17,10 @@ module.exports = {
                         }]
                     ],
                     compact: false
-                }
+                },
+                loader: 'babel-loader',
+                include: [path.resolve(__dirname, './src')],
+                exclude: '/node_modules/',
             }
         ]
     }

@@ -16,4 +16,6 @@ const Container = styled.div`
   border: 1px solid grey;
 `;
 
-export default Home;
+export default {
+    component: Home
+}
