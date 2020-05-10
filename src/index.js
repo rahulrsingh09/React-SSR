@@ -17,7 +17,6 @@ app.get('*', (req, res) => {
     //console.log(promises);
     //setTimeout((function() {res.send(renderer(req, store))}), 2000);
     Promise.all(promises).then(data => {
-        console.log('here',data);
         res.send(renderer(req, store))
     })
 
