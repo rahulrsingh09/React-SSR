@@ -5,8 +5,18 @@ import createStore from "./helpers/createStore";
 import {matchRoutes} from 'react-router-config';
 import Routes from "./client/Routes";
 import {ignoreFavicon} from "./helpers/ignoreFavicon";
+import proxy from 'express-http-proxy';
 
 const app = express();
+
+// the option is just for this api we are using , in project its not required
+app.use('/api',
+    proxy('http://react-ssr-api.herokuapp.com', {
+    proxyReqOptDecorator(opts){
+        opts.headers['x-forwarded-host'] = 'localhost:3000';
+        return opts;
+    }
+}))
 
 app.use(ignoreFavicon);
 
@@ -14,8 +24,7 @@ app.use(ignoreFavicon);
 
 app.use(express.static('public'));
 app.get('*', (req, res) => {
-    console.log(1);
-    const store = createStore();
+    const store = createStore(req);
     const branch = matchRoutes(Routes, req.path);
 
     store.runSaga().toPromise().then(() => {

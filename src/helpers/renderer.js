@@ -5,6 +5,7 @@ import { matchRoutes, renderRoutes } from "react-router-config";
 import Routes from "../client/Routes";
 import { ServerStyleSheet } from 'styled-components';
 import {Provider} from "react-redux";
+import serialize from "serialize-javascript";
 
 export default (req, store) => {
     const sheet = new ServerStyleSheet();
@@ -27,6 +28,7 @@ export default (req, store) => {
             </head>
             <body>
                 <div id = 'root'>${content}</div>
+                <script>window.INITIAL_STATE = ${serialize(store.getState())}</script>
                 <script src = 'bundle.js'></script>
             </body>
         </html>
