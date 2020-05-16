@@ -1,2 +1,4 @@
 export const FETCH_USERS = 'FETCH_USERS';
 export const SAVE_USERS = 'SAVE_USERS';
+export const FETCH_CURRENT_USER = 'FETCH_CURRENT_USERS';
+export const SAVE_CURRENT_USER = 'SAVE_CURRENT_USER';
