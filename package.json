@@ -4,10 +4,9 @@
   "description": "Server side React",
   "main": "index.js",
   "scripts": {
-    "dev": "npm-run-all --parallel dev:*",
-    "dev:server": "nodemon --watch build --exec \"node build/bundle.js\"",
-    "dev:build-server": "webpack --config webpack.server.js --watch",
-    "dev:build-client": "webpack --config webpack.client.js --watch"
+    "start": "node build/bundle.js",
+    "build": "webpack --config webpack.client.js & webpack --config webpack.server.js",
+    "build:start": "webpack --config webpack.client.js && webpack --config webpack.server.js && node build/bundle.js"
   },
   "author": "",
   "license": "MIT",
