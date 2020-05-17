@@ -18,7 +18,7 @@ const axiosInstance = axios.create({
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
     reducers,
-    window.INITIAL_STATE,
+    window['INITIAL_STATE'],
     applyMiddleware(sagaMiddleware));
 sagaMiddleware.run(rootSaga, axiosInstance);
 
@@ -26,9 +26,9 @@ sagaMiddleware.run(rootSaga, axiosInstance);
 ReactDOM.hydrate(
     <Provider store={store}>
         <BrowserRouter>
-           <React.Fragment>
-               {renderRoutes(Routes)}
-           </React.Fragment>
+            <React.Fragment>
+                {renderRoutes(Routes)}
+            </React.Fragment>
         </BrowserRouter>
     </Provider>
     , document.getElementById('root'));

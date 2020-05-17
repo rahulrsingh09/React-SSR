@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import {connect} from "react-redux";
 
 const Header = ({auth}) => {
-    const authButton =  auth ?
+    const authValue: boolean| null = auth;
+    const authButton =  authValue ?
         (<a href = '/api/logout'> Logout </a> ) :
         (<a href = '/api/auth/google'> Login </a>);
 
