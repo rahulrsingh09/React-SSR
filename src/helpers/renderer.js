@@ -7,12 +7,12 @@ import { ServerStyleSheet } from 'styled-components';
 import {Provider} from "react-redux";
 import serialize from "serialize-javascript";
 
-export default (req, store) => {
+export default (req, store, context) => {
     const sheet = new ServerStyleSheet();
     const content = renderToString(
         sheet.collectStyles(
             <Provider store = {store}>
-                <StaticRouter location = {req.path} context = {{}} >
+                <StaticRouter location = {req.path} context = {context} >
                    <React.Fragment>
                        {renderRoutes(Routes)}
                    </React.Fragment>
