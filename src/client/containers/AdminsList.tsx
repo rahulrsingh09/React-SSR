@@ -3,7 +3,7 @@ import {FETCH_ADMINS} from "../actions";
 import {connect} from "react-redux";
 import requireAuth from "../components/hoc/requireAuth";
 
-class AdminsList extends React.Component {
+class AdminsList extends React.Component<any,any> {
 
     constructor(props) {
         super(props);

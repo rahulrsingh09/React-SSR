@@ -21,7 +21,7 @@ export function* fetchCurrentUser(api, action) {
 }
 
 export function* fetchAdmins(api, action) {
-    let res = {};
+    let res:any = {};
     try{
         res = yield call(getAdmins,api);
         yield put({ type: SAVE_ADMINS, adminsList: res.data});

@@ -2,7 +2,7 @@ import React from 'react';
 import {FETCH_USERS} from "../actions";
 import {connect} from "react-redux";
 
-class UsersList extends React.Component {
+class UsersList extends React.Component<any,any> {
 
     constructor(props) {
         super(props);
