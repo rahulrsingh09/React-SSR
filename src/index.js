@@ -11,12 +11,7 @@ const app = express();
 
 // the option is just for this api we are using , in project its not required
 app.use('/api',
-    proxy('http://react-ssr-api.herokuapp.com', {
-    proxyReqOptDecorator(opts){
-        opts.headers['x-forwarded-host'] = 'localhost:3000';
-        return opts;
-    }
-}))
+    proxy('http://react-ssr-api.herokuapp.com'));
 
 app.use(ignoreFavicon);
 
