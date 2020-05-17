@@ -2,3 +2,8 @@ export const FETCH_USERS = 'FETCH_USERS';
 export const SAVE_USERS = 'SAVE_USERS';
 export const FETCH_CURRENT_USER = 'FETCH_CURRENT_USERS';
 export const SAVE_CURRENT_USER = 'SAVE_CURRENT_USER';
+export const FETCH_ADMINS = 'FETCH_ADMINS';
+export const SAVE_ADMINS = 'SAVE_ADMINS';
+
+
+export const FETCH_ADMINS_ERROR = 'FETCH_ADMINS_ERROR';

@@ -21,9 +21,16 @@ app.use(express.static('public'));
 app.get('*', (req, res) => {
     const store = createStore(req);
     const branch = matchRoutes(Routes, req.path);
-
     store.runSaga().toPromise().then(() => {
-        res.send(renderer(req, store))
+        const context = {};
+        const content = renderer(req, store,context);
+        if(context.url){
+            return res.redirect(301,context.url);
+        }
+        if(context.notFound){
+            res.status(404);
+        }
+        res.send(content);
     });
 
     const promises =  branch.map(({ route }) => {
