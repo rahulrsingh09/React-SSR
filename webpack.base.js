@@ -1,5 +1,6 @@
 const path = require('path');
 module.exports = {
+    mode: "development", // change to prod when to deploy.
     module: {
         rules: [
             {
@@ -41,6 +42,9 @@ module.exports = {
                 loader: 'awesome-typescript-loader',
                 exclude: '/node_modules/'
             }
-        ]
-    }
+        ],
+    },
+    resolve: {
+        extensions: [ '.tsx', '.ts', '.js' ]
+    },
 };
