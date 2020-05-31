@@ -47,3 +47,7 @@ export const TextArea = styled.span`
   text-align: justify;
   line-height: ${props => props.theme.typography.line_height};
 `;
+
+export const Anchor = styled.a`
+ color: inherit;
+`

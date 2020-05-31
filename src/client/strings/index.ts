@@ -5,6 +5,7 @@ const LogoConstant = {
 
 const HOME = "Universal React";
 const OG_IMAGE = "https://firebasestorage.googleapis.com/v0/b/images-3691c.appspot.com/o/ogTitle.png?alt=media";
+const GIT_FORK = "https://github.com/rahulrsingh09/React-SSR";
 
 const IMAGES = {
     CSS3: {
@@ -69,4 +70,4 @@ const IMAGES = {
     }
 }
 
-export {LogoConstant, IMAGES, HOME, OG_IMAGE}
+export {LogoConstant, IMAGES, HOME, OG_IMAGE, GIT_FORK}
