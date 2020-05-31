@@ -9,11 +9,19 @@ import {navigateToExternalUrl} from "../Utils";
 const Home = () => {
     return (
         <React.Fragment>
-            <Helmet>
-                <title>{HOME}</title>
-                <meta property="og:title" content={HOME} />
-                <meta property="og:image" content={OG_IMAGE} />
-            </Helmet>
+            <Helmet
+                title={HOME}
+                meta={[
+                    {
+                        property: 'og:title',
+                        content: {HOME},
+                    },
+                    {
+                        property: 'og:image',
+                        content: {OG_IMAGE},
+                    }
+                ]}
+            />
             <Container height={'auto'} direction={'column'}>
                 <Hero/>
                 <OveriddenContainer direction={'column'} margin={'10 0'} padding={'10'}>
