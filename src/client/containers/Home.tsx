@@ -13,12 +13,12 @@ const Home = () => {
                 title={HOME}
                 meta={[
                     {
-                        property: 'og:title',
-                        content: {HOME},
+                        property: "og:title",
+                        content: HOME,
                     },
                     {
-                        property: 'og:image',
-                        content: {OG_IMAGE},
+                        property: "og:image",
+                        content: OG_IMAGE,
                     }
                 ]}
             />
