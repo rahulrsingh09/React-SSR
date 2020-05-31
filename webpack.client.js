@@ -3,7 +3,7 @@ const webpackBase = require('./webpack.base');
 const webpackMerge = require('webpack-merge');
 
 const config = {
-    entry: "./src/client/client.js",
+    entry: "./src/client/client.tsx",
 
     output: {
         filename: "bundle.js",

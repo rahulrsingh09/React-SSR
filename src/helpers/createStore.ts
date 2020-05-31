@@ -12,7 +12,7 @@ export default (req) => {
     })
 
     const sagaMiddleware = createSagaMiddleware();
-    const store = createStore(
+    const store: any = createStore(
         reducers,
         {},
         applyMiddleware(sagaMiddleware))

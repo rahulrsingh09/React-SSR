@@ -6,7 +6,7 @@ const webpackNodeExternals = require('webpack-node-externals');
 const config = {
     target: "node",
 
-    entry: "./src/index.js",
+    entry: "./src/index.ts",
 
     output: {
         filename: "bundle.js",

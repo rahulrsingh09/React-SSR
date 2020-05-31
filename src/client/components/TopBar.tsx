@@ -2,8 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {connect} from "react-redux";
 
-const Header = ({auth}) => {
-    const authButton =  auth ?
+const TopBar = ({auth}) => {
+    const authValue: boolean| null = auth;
+    const authButton =  authValue ?
         (<a href = '/api/logout'> Logout </a> ) :
         (<a href = '/api/auth/google'> Login </a>);
 
@@ -25,4 +26,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, null)(Header);
+export default connect(mapStateToProps, null)(TopBar);

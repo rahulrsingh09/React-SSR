@@ -1,4 +1,4 @@
-
+// @ts-nocheck
 import express from 'express';
 import renderer from "./helpers/renderer";
 import createStore from "./helpers/createStore";
